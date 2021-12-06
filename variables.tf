@@ -13,7 +13,7 @@ variable "tags" {
 }
 
 variable "scheduled_query_alert_rules" {
-  description = "" # TODO
+  description = "Scheduled query rules with custom webhook triggers"
   type = map(object({
     description = string
     target      = string
