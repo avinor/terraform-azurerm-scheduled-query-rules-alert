@@ -10,16 +10,13 @@ This module is built on top of `azurerm_monitor_scheduled_query_rules_alert` and
 ## Example use cases
 
 Send a slack message if volume ingested by Log Analytics exceeds 600MB/hour
-```hcl
-module {
+```terraform
+module "example" {
   source = "github.com/avinor/terraform-azurerm-scheduled-query-rules-alert"
-}
-
-inputs {
 
   resource_group_name = "alerting-rule-resourcegroup"
-  location = "westerneurope"
-  
+  location = "westeurope"
+
   scheduled_query_alert_rules = {
     "log-analytics-volume" = {
       description = "Trigger slack alert when hourly ingestion volume exceeds 600MB"
