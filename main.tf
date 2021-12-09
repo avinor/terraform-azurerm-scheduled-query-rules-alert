@@ -42,13 +42,13 @@ resource "azurerm_monitor_action_group" "action" {
 
 resource "azurerm_monitor_scheduled_query_rules_alert" "main" {
   for_each = var.scheduled_query_alert_rules
-
-  name                = "${each.key}-queryrule"
-  description         = each.value.description
-  resource_group_name = azurerm_resource_group.main.name
-  location            = var.location
-  tags                = var.tags
-  enabled             = true
+  authorized_resource_ids = []
+  name                    = "${each.key}-queryrule"
+  description             = each.value.description
+  resource_group_name     = azurerm_resource_group.main.name
+  location                = var.location
+  tags                    = var.tags
+  enabled                 = true
 
   trigger {
     operator  = each.value.criteria.operator
