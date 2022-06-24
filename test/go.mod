@@ -1,6 +1,6 @@
 module github.com/terraform-azurerm-scheduled-query-rules-alert/test
 
-go 1.17
+go 1.18
 
 require github.com/gruntwork-io/terratest v0.38.6
 
