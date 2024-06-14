@@ -7,8 +7,8 @@ module "simple" {
   scheduled_query_alert_rules = {
     "log-analytics-hourly-ingestion-volume" = {
       description = "Trigger alert when hourly ingestion volume exceeds threshold value"
-      target   = "/subscriptions/8c2235a1-14f2-4f16-a615-03f1702426fb/resourcegroups/my-rg/providers/microsoft.operationalinsights/workspaces/my-workspace"
-      severity = 2
+      target      = "/subscriptions/8c2235a1-14f2-4f16-a615-03f1702426fb/resourcegroups/my-rg/providers/microsoft.operationalinsights/workspaces/my-workspace"
+      severity    = 2
       criteria = {
         frequency   = 30
         time_window = 120
