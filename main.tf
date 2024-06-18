@@ -1,9 +1,9 @@
 terraform {
-  required_version = ">= 0.13"
+  required_version = ">= 1.3"
   required_providers {
     azurerm = {
       source  = "hashicorp/azurerm"
-      version = "~> 3.11.0"
+      version = "~> 3.107.0"
     }
   }
 }
@@ -41,7 +41,7 @@ resource "azurerm_monitor_action_group" "action" {
 }
 
 resource "azurerm_monitor_scheduled_query_rules_alert" "main" {
-  for_each = var.scheduled_query_alert_rules
+  for_each                = var.scheduled_query_alert_rules
   authorized_resource_ids = []
   name                    = "${each.key}-queryrule"
   description             = each.value.description
